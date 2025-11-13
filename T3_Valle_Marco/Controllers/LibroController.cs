@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using T3_Valle_Marco.Datos;
 using T3_Valle_Marco.Models;
 
@@ -17,6 +18,8 @@ namespace T3_Valle_Marco.Controllers
             IEnumerable<Libro> lista = _db.Libros;
             return View(lista);
         }
+
+        [Authorize]
         public IActionResult Crear()
         {
             return View();
@@ -35,6 +38,7 @@ namespace T3_Valle_Marco.Controllers
             return View(libro);
         }
 
+        [Authorize]
         public IActionResult Editar(int? id)
         {
             if (id == null || id == 0)
@@ -62,6 +66,7 @@ namespace T3_Valle_Marco.Controllers
             return View(libro);
         }
 
+        [Authorize]
         public IActionResult Eliminar(int? id)
         {
             if (id == null || id == 0)
