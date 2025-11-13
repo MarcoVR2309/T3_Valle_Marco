@@ -1,0 +1,65 @@
+﻿@model IEnumerable<T3_Valle_Marco.Models.Libro>
+
+¨@{
+    ViewData["Title"] = "Libro Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container pt-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Lista de Libros</h2>
+        </div>
+        <div class="col-6">
+            <a asp-controller="Libro" asp-action="Crear" class="btn btn-primary">Nuevo Libro</a>
+        </div>
+    </div>
+
+    <br/>
+
+    @if (Model.Count() > 0)
+    {
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Titulo</th>
+                    <th>Autor</th>
+                    <th>Tema</th>
+                    <th>Editorial</th>
+                    <th>Año Publicacion</th>
+                    <th>Paginas</th>
+                    <th>Categoria</th>
+                    <th>Material</th>
+                    <th>Copias</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var libro in Model)
+                {
+                    <tr>
+                        <th width="40%">@libro.Titulo</th>
+                        <th width="40%">@libro.Autor</th>
+                        <th width="40%">@libro.Tema</th>
+                        <th width="40%">@libro.Editorial</th>
+                        <th width="40%">@libro.AnioPublicacion</th>
+                        <th width="40%">@libro.Paginas</th>
+                        <th width="40%">@libro.Categoria</th>
+                        <th width="40%">@libro.Material</th>
+                        <th width="40%">@libro.Copias</th>
+                        <th>
+                            <div class="w-75 btn-group" role="group">
+                                <a asp-controller="Libro" asp-action="Editar" asp-route-Id="@libro.Id" class="btn btn-primary mx-2">Editar</a>
+                                <a asp-controller="Libro" asp-action="Eliminar" asp-route-Id="@libro.Id" class="btn btn-danger mx-2">Eliminar</a>
+                            </div>
+                        </th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-info">No hay libros registrados.</div>
+    }
+</div>
