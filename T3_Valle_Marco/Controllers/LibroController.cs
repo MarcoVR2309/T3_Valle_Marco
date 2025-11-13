@@ -94,5 +94,16 @@ namespace T3_Valle_Marco.Controllers
             _db.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
+
+        [Authorize]
+        public IActionResult Detalles()
+        {
+            return View();
+        }
+        [Authorize]
+        public IActionResult ArquiUnEnfoquePractico()
+        {
+            return View();
+        }
     }
 }

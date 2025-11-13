@@ -1,0 +1,101 @@
+﻿@{
+    ViewData["Title"] = "Arquitectura de Software por BlanCarte Hurralde";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container my-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-primary mb-3">@ViewData["Title"]</h1> 
+        <p class="lead text-muted">Un enfoque práctico para el diseño de sistemas</p>
+  </div>
+
+  <div class="row justify-content-center mb-5">
+        <div class="col-lg-4 col-md-6 text-center">
+         <div class="card shadow-lg border-0">
+    <div class="card-body p-4">
+         <img src="https://reactiveprogramming.io/_next/image?url=%2Fbooks%2Farquitectura.png&w=640&q=75" 
+      alt="Portada del libro Arquitectura de Software" 
+         class="img-fluid rounded mb-3" 
+         style="max-width: 300px;" />
+          <h3 class="h5 fw-bold">Introducción a la Arquitectura de Software</h3>
+            <p class="text-muted small">Un enfoque práctico</p>
+          </div>
+            </div>
+        </div>
+    </div>
+
+ <div class="row justify-content-center mb-5">
+      <div class="col-lg-8">
+            <div class="card shadow-sm border-0">
+     <div class="card-body p-4">
+               <h2 class="h4 fw-bold mb-4 text-primary">
+     <i class="bi bi-book-fill"></i> Acerca del Libro
+              </h2>
+         <p class="text-justify lh-lg">
+    En esta obra se describen claramente los procesos y estructuras necesarias para diseñar e implementar 
+       de manera más eficiente arquitecturas de sistemas de software. El software está presente en gran 
+                cantidad de objetos que nos rodean como los teléfonos y dispositivos móviles; uno de los factores 
+    clave del éxito de los sistemas es su diseño eficiente, de manera particular el diseño de la 
+       arquitectura de software.
+      </p>
+    <p class="text-justify lh-lg">
+        En el contexto de la ingeniería de software, el desarrollo de la arquitectura tiene que ver con la 
+       estructuración de un sistema para satisfacer los requerimientos de clientes y otros involucrados, 
+       en especial los requerimientos de atributos de calidad con necesidades cada vez más complejas como 
+       el desempeño, disponibilidad o facilidad de uso.
+            </p>
+         </div>
+    </div>
+  </div>
+    </div>
+
+  <div class="row justify-content-center mb-5">
+   <div class="col-lg-8">
+   <div class="card shadow-sm border-0">
+           <div class="card-body p-4">
+    <h2 class="h4 fw-bold mb-4 text-primary">
+     <i class="bi bi-play-circle-fill"></i> Video Recomendado
+                 </h2>
+       <div class="ratio ratio-16x9">
+             <iframe 
+       src="https://www.youtube.com/embed/C7nxtJDEYoA" 
+       title="3 libros para iniciar en arquitectura de software" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+ allowfullscreen>
+ </iframe>
+</div>
+      <p class="text-muted mt-3 mb-0 small">
+    <strong>3 libros para iniciar en arquitectura de software</strong> - 
+               Una guía para comenzar tu camino en el diseño de sistemas
+      </p>
+     </div>
+            </div>
+  </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+            <a asp-controller="Libro" asp-action="Index" class="btn btn-primary btn-lg px-5">
+          <i class="bi bi-arrow-left"></i> Volver a la lista de libros
+     </a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <style>
+    .text-justify {
+       text-align: justify;
+        }
+        
+    .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+         transform: translateY(-5px);
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+        }
+    </style>
+}
